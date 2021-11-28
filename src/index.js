@@ -13,7 +13,7 @@ function displayTemperature(response) {
   windElement.innerHTML = Math.round(response.data.main.wind.speed);
 }
 
-let apiKey = "74f3a3ae16656944facca16fcb9edb90";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Rockhampton&appid=${apiKey}&units=metric`;
+let apiKey = "7ea27d4912ee585534fb0acd080727de6";
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=NewYork&appid=${apiKey}&units=metric`;
 
 axios.get(apiUrl).then(displayTemperature);
