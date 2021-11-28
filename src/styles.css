@@ -1,0 +1,42 @@
+body {
+  max-width: 600px;
+  border-color: darkblue;
+  font-family: "Outfit", sans-serif;
+}
+
+ul {
+  list-style: none;
+  display: inline-block;
+}
+
+footer {
+  margin: 5px auto;
+  padding: 0px 50px;
+}
+
+.current-city,
+#temperature {
+  color: blue;
+  margin: 20px auto;
+  line-height: 20px;
+  font-weight: bolder;
+  font-size: 24px;
+  text-align: center;
+}
+
+.container {
+  border-radius: 20px;
+  background-color: rgb(167, 248, 248);
+  margin: auto 40px;
+  padding: 20px 50px;
+  display: block;
+}
+
+.search-form,
+#date {
+  text-align: center;
+}
+
+.wind-humidity-uv {
+  color: red;
+}
