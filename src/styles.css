@@ -40,3 +40,7 @@ footer {
 .wind-humidity-uv {
   color: red;
 }
+
+#description {
+  text-transform: capitalize;
+}

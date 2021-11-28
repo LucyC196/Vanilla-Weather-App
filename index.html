@@ -36,18 +36,21 @@
         <input type="submit" value="Search" />
       </form>
 
-      <p class="current-city">Rockhampton</p>
+      <p class="current-city" id="city">Rockhampton</p>
       <div id="date">Saturday, 9th October 2021</div>
 
       <div id="temperature">
         25<span id="units">&degC | <i class="fas fa-sun"></i></span>
       </div>
+      <div id="description">Sunny</div>
 
       <ul class="wind-humidity-uv">
-        <li id="wind">Wind: 19<span id="units">km/hr </span></li>
+        <li>Wind: <span id="wind">19</span><span id="units">km/hr </span></li>
 
-        <li id="humidity">Humidity: 41 <span id="units">% </span></li>
-        <li id="uv">UV Index: 1.5</li>
+        <li>
+          Humidity: <span id="humidity">41</span> <span id="units">% </span>
+        </li>
+        <li>UV Index: <span id="uv">1.5</span></li>
       </ul>
     </div>
     <footer>
