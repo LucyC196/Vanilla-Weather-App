@@ -80,7 +80,7 @@ function displayFahrenheitTemperature(event) {
   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
 
-let celsiusTemperature = temperatureElement;
+
 
 //issue is code line 78 on saving the '(" get redueced from 3 sets to 1 set - removed format on save
 
