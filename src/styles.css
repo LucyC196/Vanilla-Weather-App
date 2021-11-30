@@ -45,6 +45,7 @@ footer {
   text-transform: capitalize;
   text-align: center;
 }
-#units {
+#celsius-link,
+#fahrenheit-link {
   text-decoration: none;
 }
