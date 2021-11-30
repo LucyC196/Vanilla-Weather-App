@@ -61,15 +61,6 @@ function getCurrentLocation(event) {
   navigator.geolocation.getCurrentPosition(searchLocation);
 }
 
-function displayCelsiusTemperature(event) {
-  event.preventDefault();
-  celsiusLink.classList.add("active");
-  fahrenheitLink.classList.remove("active");
-  let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = Math.round(celsiusTemperature);
-}
-
-//change this for fahrenheit maybe? Check Week 7 lesson 9 for any solutions
 function displayFahrenheitTemperature(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
@@ -79,6 +70,19 @@ function displayFahrenheitTemperature(event) {
   let fahrenheitTemperature = (((celsiusTemperature * 9) / 5) + 32);
   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
+
+
+  function displayCelsiusTemperature(event) {
+    event.preventDefault();
+    celsiusLink.classList.add("active");
+    fahrenheitLink.classList.remove("active");
+    let temperatureElement = document.querySelector("#temperature");
+    temperatureElement.innerHTML = Math.round(celsiusTemperature);
+  }
+
+  //change this for fahrenheit maybe? Check Week 7 lesson 9 for any solutions
+
+
 
 
 
@@ -97,6 +101,8 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
+
+let fahrenheitTemperature = null;
 
 // Have not added current location button yet
 //let currentLocationButton = document.querySelector("#current-location-button");
