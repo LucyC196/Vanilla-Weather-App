@@ -15,10 +15,7 @@ footer {
 }
 
 .current-city,
-#temperature,
-#units,
-#emoji,
-#description {
+.current-forecast {
   color: blue;
   margin: 20px auto;
   line-height: 20px;
