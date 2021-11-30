@@ -15,7 +15,8 @@ footer {
 }
 
 .current-city,
-#temperature {
+#temperature,
+#emoji {
   color: blue;
   margin: 20px auto;
   line-height: 20px;

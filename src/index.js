@@ -34,6 +34,7 @@ function displayWeatherCondition(response) {
   );
   document.querySelector("#description").innerHTML =
     response.data.weather[0].main;
+  console.log(response.data);
 }
 
 function searchCity(city) {
