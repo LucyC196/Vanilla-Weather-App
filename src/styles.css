@@ -46,6 +46,11 @@ footer {
   text-align: center;
 }
 #celsius-link,
-#fahrenheit-link {
+#fahrenheit-link,
+.active {
   text-decoration: none;
+}
+
+#units .active:hover {
+  cursor: default;
 }
