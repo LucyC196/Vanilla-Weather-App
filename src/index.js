@@ -67,27 +67,21 @@ function displayFahrenheitTemperature(event) {
 
   celsiusLink.classList.remove("active");
   fahrenheitLink.classList.add("active");
-  let fahrenheitTemperature = (((celsiusTemperature * 9) / 5) + 32);
+  let fahrenheitTemperature = ("celsiusTemperature" * 9) / 5 + 32;
   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
 
+function displayCelsiusTemperature(event) {
+  event.preventDefault();
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+}
 
-  function displayCelsiusTemperature(event) {
-    event.preventDefault();
-    celsiusLink.classList.add("active");
-    fahrenheitLink.classList.remove("active");
-    let temperatureElement = document.querySelector("#temperature");
-    temperatureElement.innerHTML = Math.round(celsiusTemperature);
-  }
+//change this for fahrenheit maybe? Check Week 7 lesson 9 for any solutions
 
-  //change this for fahrenheit maybe? Check Week 7 lesson 9 for any solutions
-
-
-
-
-
-//issue is code line 78 on saving the '(" get redueced from 3 sets to 1 set - removed format on save
-
+//issue is code line 71 on saving the '(" get redueced from 3 sets to 1 set - removed format on save
 
 let dateElement = document.querySelector("#date");
 let currentTime = new Date();
