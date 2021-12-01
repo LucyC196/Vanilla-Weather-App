@@ -34,6 +34,9 @@ function displayWeatherCondition(response) {
   );
   document.querySelector("#description").innerHTML =
     response.data.weather[0].main;
+
+  celsiusTemperature = response.data.main.temp;
+
   console.log(response.data);
 }
 
@@ -83,6 +86,8 @@ function displayCelsiusTemperature(event) {
 
 //issue is code line 71 on saving the '(" get redueced from 3 sets to 1 set - removed format on save
 
+let celsiusTemperature = null;
+
 let dateElement = document.querySelector("#date");
 let currentTime = new Date();
 dateElement.innerHTML = formatDate(currentTime);
@@ -95,8 +100,6 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
-
-let celsiusTemperature = null;
 
 // Have not added current location button yet
 //let currentLocationButton = document.querySelector("#current-location-button");
