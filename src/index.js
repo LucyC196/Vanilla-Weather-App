@@ -36,7 +36,7 @@ function displayWeatherCondition(response) {
     response.data.weather[0].main;
   iconElement.setAttribute(
     "src",
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    `https://api.openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
 
@@ -106,7 +106,7 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
-let iconElement = document.querySelector("icon");
+let iconElement = document.querySelector("#icon");
 
 // Have not added current location button yet
 //let currentLocationButton = document.querySelector("#current-location-button");
