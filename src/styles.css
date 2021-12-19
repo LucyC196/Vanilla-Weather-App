@@ -54,7 +54,7 @@ footer {
 }
 
 .wind-humidity {
-  color: red;
+  color: rgb(92, 90, 90);
   padding-left: 100px;
   padding-top: 30px;
   font-weight: bold;
@@ -78,6 +78,7 @@ footer {
   font-size: 16px;
   opacity: 0.5;
   color: #000;
+  text-align: center;
 }
 
 .weather-forecast-temperatures {
@@ -90,7 +91,7 @@ footer {
 
 .weather-forecast-image {
   display: block;
-  margin-left: 0 auto;
+  max-width: 55px;
 }
 
 #description {
