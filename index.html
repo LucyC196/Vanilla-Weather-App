@@ -26,52 +26,64 @@
     <link href="src/styles.css" rel="stylesheet" />
   </head>
   <body>
-    <div class="container">
-      <form class="search-form" id="search-form">
+  <div class="container">
+  <div class="row">
+   <div class="col">
+    <form class="search-form" id="search-form">
         <input
+          class="form-control form-control-sm"
           type="text"
           placeholder="Enter your current city"
           id="city-input"
         />
-        <input type="submit" value="Search" />
+  </div>
+  <div class="col-4">
+   <input
+          class="form-control form-control-sm"
+          type="submit"
+          value="Search"
+        />
       </form>
+  </div>
+</div>
 
       <p class="current-city" id="city">Rockhampton</p>
       <div id="date">Saturday, 9th October 2021</div>
+      <div class="circle-wrap-conditions">
+        <div class="current-forecast">
+          <span id="temperature">25</span>
+          <span id="units">
+            <a href="#" id="celsius-link" class="active">&degC</a>
+            |
+            <a href="#" id="fahrenheit-link" class="active">&degF</a>
+          </span>
+          <span id="w-icon"
+            ><img
+              scr="https://openweathermap.org/img/wn/01d@2x.png"
+              alt="Sunny"
+              id="icon"
+          /></span>
+        </div>
 
-      <div class="current-forecast">
-        <span id="temperature">25</span>
-        <span id="units">
-          <a href="#" id="celsius-link" class="active">&degC</a>
-          |
-          <a href="#" id="fahrenheit-link" class="active">&degF</a>
-        </span>
-        <span id="w-icon"
-          ><img
-            scr="https://openweathermap.org/img/wn/01d@2x.png"
-            alt="Sunny"
-            id="icon"
-        /></span>
+        <div id="description">Sunny</div>
+
+        <ul class="wind-humidity">
+          <li>Wind: <span id="wind">19</span><span id="units">km/hr </span></li>
+
+          <li>
+            Humidity: <span id="humidity">41</span> <span id="units">% </span>
+          </li>
+        </ul>
       </div>
-
-      <div id="description">Sunny</div>
-
-      <ul class="wind-humidity">
-        <li>Wind: <span id="wind">19</span><span id="units">km/hr </span></li>
-
-        <li>
-          Humidity: <span id="humidity">41</span> <span id="units">% </span>
-        </li>
-      </ul>
       <hr />
-      <div class="weather-forcast">
+      <div class="weather-forcast" id="forecast">
         <div class="row">
           <div class="col-2">
             <div class="weather-forecast-date">Thu</div>
             <img
               src="https://openweathermap.org/img/wn/50d@2x.png"
               alt="42"
-              class="weather-forecast-imgage"
+              class="weather-forecast-image"
             />
             <div class="weather-forecast-temperatures">
               <span class="weather-forecast-temperature-max"> 18 &deg </span>
@@ -86,8 +98,8 @@
     <footer>
       <small
         ><a href="https://github.com/LucyC196/Vanilla-Weather-App.git"
-          >Source Code</a
-        >
+          >Source Code on GitHub.
+        </a>
 
         Coded by Lucy Cupitt
       </small>

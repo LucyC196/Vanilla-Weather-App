@@ -87,6 +87,37 @@ function displayCelsiusTemperature(event) {
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+
+  let days = ["Mon", "Tues", "Wed", "Thur", "Fri"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `       
+          <div class="col-2">
+            <div class="weather-forecast-date">${day}</div>
+            <img
+              src="https://openweathermap.org/img/wn/50d@2x.png"
+              alt="42"
+              class="weather-forecast-imgage"
+            />
+            <div class="weather-forecast-temperatures">
+              <span class="weather-forecast-temperature-max"> 18 &deg </span>
+              |
+              <span class="weather-forecast-temperature-min"> 12 &deg </span>
+            </div>
+          </div>
+            
+`;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 //change this for fahrenheit maybe? Check Week 7 lesson 9 for any solutions
 
 //issue is code line 71 on saving the '(" get redueced from 3 sets to 1 set - removed format on save
@@ -112,4 +143,5 @@ let iconElement = document.querySelector("#icon");
 //let currentLocationButton = document.querySelector("#current-location-button");
 //currentLocationButton.addEventListener("click", getCurrentLocation);
 
+displayForecast();
 searchCity("Rockhampton");

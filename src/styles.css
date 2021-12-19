@@ -1,5 +1,6 @@
 body {
   max-width: 600px;
+  margin: 0 auto;
   border-color: darkblue;
   font-family: "Outfit", sans-serif;
 }
@@ -14,8 +15,7 @@ footer {
   padding: 0px 50px;
 }
 
-.current-city,
-.current-forecast {
+.current-city {
   color: blue;
   margin: 20px auto;
   line-height: 20px;
@@ -24,10 +24,26 @@ footer {
   text-align: center;
 }
 
+.current-forecast {
+  color: blue;
+  margin: 0 auto;
+  line-height: 20px;
+  font-weight: bolder;
+  font-size: 24px;
+  text-align: center;
+}
+
 .container {
   border-radius: 20px;
-  background-color: rgb(167, 248, 248);
-  margin: auto 40px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: cornflowerblue;
+  background: linear-gradient(
+    181.2deg,
+    rgb(181, 239, 249) 10.5%,
+    rgb(254, 254, 254) 86.8%
+  );
+  margin: 20px 40px;
   padding: 20px 50px;
   display: block;
 }
@@ -39,20 +55,18 @@ footer {
 
 .wind-humidity {
   color: red;
+  padding-left: 100px;
+  padding-top: 30px;
+  font-weight: bold;
 }
 
-#description {
-  text-transform: capitalize;
-  text-align: center;
-}
-#celsius-link,
-#fahrenheit-link,
-.active {
-  text-decoration: none;
-}
-
-#units .active:hover {
-  cursor: default;
+.circle-wrap-conditions {
+  border-radius: 80px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: cornflowerblue;
+  max-width: 300px;
+  margin: 0 auto;
 }
 
 .weather-forecast {
@@ -74,7 +88,26 @@ footer {
   opacity: 0.5;
 }
 
-.weather-forecast-imgage {
+.weather-forecast-image {
   display: block;
   margin-left: 0 auto;
+}
+
+#description {
+  text-transform: capitalize;
+  text-align: center;
+  font-size: 24px;
+}
+#celsius-link,
+#fahrenheit-link,
+.active {
+  text-decoration: none;
+}
+
+#units .active:hover {
+  cursor: pointer;
+}
+
+#date {
+  padding-bottom: 10px;
 }
