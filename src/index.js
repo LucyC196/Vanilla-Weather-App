@@ -23,6 +23,46 @@ function formatDate(date) {
   return `${day} ${hours}:${minutes}`;
 }
 
+function displayForecast(response) {
+  console.log(response.data.daily);
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+
+  let days = ["Mon", "Tues", "Wed", "Thur", "Fri"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `       
+          <div class="col-2">
+            <div class="weather-forecast-date">${day}</div>
+            <img
+              src="https://openweathermap.org/img/wn/50d@2x.png"
+              alt="42"
+              class="weather-forecast-image"
+            />
+            <div class="weather-forecast-temperatures">
+              <span class="weather-forecast-temperature-max"> 18 &deg </span>
+              |
+              <span class="weather-forecast-temperature-min"> 12 &deg </span>
+            </div>
+          </div>
+            
+`;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "74f3a3ae16656944facca16fcb9edb90";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast);
+}
+
 function displayWeatherCondition(response) {
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#temperature").innerHTML = Math.round(
@@ -41,8 +81,7 @@ function displayWeatherCondition(response) {
   iconElement.setAttribute("alt", response.data.weather[0].description);
 
   celsiusTemperature = response.data.main.temp;
-
-  console.log(response.data);
+  getForecast(response.data.coord);
 }
 
 function searchCity(city) {
@@ -87,41 +126,6 @@ function displayCelsiusTemperature(event) {
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
 
-function displayForecast() {
-  let forecastElement = document.querySelector("#forecast");
-
-  let forecastHTML = `<div class="row">`;
-
-  let days = ["Mon", "Tues", "Wed", "Thur", "Fri"];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `       
-          <div class="col-2">
-            <div class="weather-forecast-date">${day}</div>
-            <img
-              src="https://openweathermap.org/img/wn/50d@2x.png"
-              alt="42"
-              class="weather-forecast-imgage"
-            />
-            <div class="weather-forecast-temperatures">
-              <span class="weather-forecast-temperature-max"> 18 &deg </span>
-              |
-              <span class="weather-forecast-temperature-min"> 12 &deg </span>
-            </div>
-          </div>
-            
-`;
-  });
-
-  forecastHTML = forecastHTML + `</div>`;
-  forecastElement.innerHTML = forecastHTML;
-}
-
-//change this for fahrenheit maybe? Check Week 7 lesson 9 for any solutions
-
-//issue is code line 71 on saving the '(" get redueced from 3 sets to 1 set - removed format on save
-
 let celsiusTemperature = null;
 
 let dateElement = document.querySelector("#date");
@@ -139,9 +143,4 @@ celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 let iconElement = document.querySelector("#icon");
 
-// Have not added current location button yet
-//let currentLocationButton = document.querySelector("#current-location-button");
-//currentLocationButton.addEventListener("click", getCurrentLocation);
-
-displayForecast();
 searchCity("Rockhampton");
